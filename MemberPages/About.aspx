@@ -117,7 +117,8 @@
         </p>
         <h3>Contact</h3>
         <p>
-            For any questions, comments, concerns, or suggestions contact us at <a class="link-override" href="mailto:ieee@umn.edu">ieee@umn.edu</a>
+            For any questions, comments, concerns, or suggestions contact us at <a class="link-override" href="mailto:ieee@umn.edu">ieee@umn.edu</a>.
+            Source code for this web application can be found at <a class="link-override" href="https://github.com/UMNIEEE/checkin">https://github.com/UMNIEEE/checkin</a>.
         </p>
 </asp:Content>
 <asp:Content ID="JavaScriptContent" ContentPlaceHolderID="JavaScripts" runat="server">

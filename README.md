@@ -1,7 +1,7 @@
-ieee-checkin
+Meeting Check-in Web App
 ============
 
-Swipe your U Card or enter your info to check in at IEEE UMN meetings.
+Swipe your ID or enter your info to check in at any meeting.
 
 ## Dependencies
 * Currently running [twitter bootstrap](http://getbootstrap.com/2.3.2/), [jquery](http://jquery.com/download/)

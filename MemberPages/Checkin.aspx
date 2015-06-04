@@ -32,7 +32,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="JavaScriptContent" ContentPlaceHolderID="JavaScripts" runat="server">
-    <script src="../Scripts/card-parser.js"></script>
+    <script src="../Scripts/card-parser.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             setFocus();

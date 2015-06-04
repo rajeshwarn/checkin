@@ -218,6 +218,7 @@ function clearData() {
 }
 
 var outputText = "";
+var numRows = 1;
 
 // creates the html table of data to display of the given meeting and date data (both null == all data)
 // tableSelector is a jquery selector to a table where the data will be appended.
@@ -231,7 +232,8 @@ function createOutput(tableSelector, meeting, date) {
             var cursor = event.target.result;
             if (cursor) {
                 if ((meeting === "" && date === "") || (meeting === "null" && date === "null") || (meeting === cursor.value.meeting && date === cursor.value.date)) {
-                    var tableRow = "<tr>" +
+                    var tableRow = "<tr id='row" + numRows + "'>" +
+                        "<td>" + numRows + "</td>" +
                         "<td>" + cursor.value.firstname + "</td>" +
                         "<td>" + cursor.value.lastname + "</td>";
 
@@ -261,12 +263,15 @@ function createOutput(tableSelector, meeting, date) {
                         cursor.value.meeting + "," +
                         cursor.value.date +
                         "\n";
+
+                    numRows = numRows + 1;
                 }
 
                 cursor.continue();
             } else {
                 //alert("All elements displayed.");
                 try {
+
                     if (outputCallback != undefined)
                         outputCallback(outputText);
                 }

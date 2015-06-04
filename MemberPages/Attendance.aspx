@@ -49,12 +49,21 @@
     <div class="boxed-section margin-lg-after">
         <asp:Button CssClass="form-control input-lg btn btn-info check-in" OnClientClick="return clearSubmit();" ID="ClearButton" Text="Clear" runat="server" />
     </div>
+
+    <p class="section-header">Lottery <i class="fa fa-random"></i></p>
+    <div class="boxed-section margin-lg-after">
+        <asp:Button CssClass="form-control input-lg btn btn-info check-in" OnClientClick="return lotteryRoll();" ID="RandomButton" Text="Roll" runat="server" />
+        <p class="text-center">And the winner is...</p>
+        <div class="text-center" id="WinnerBox"></div>
+    </div>
+
     </div><!--Not an orphaned /div in VS, just starts on the master page. Same for closing tag of div below.-->
     <div class="col-custom-offset col-custom col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
     <div id="outputDiv">
         <table id="output">
             <tbody>
                 <tr id="headerRow">
+                    <th>Index</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Student ID</th>
@@ -103,7 +112,7 @@
         // event handler for when meeting dropdown selection is changed
         function selectionChanged() {
             var decoded = decodeMeeting($("#ouputDropdown option:selected").val());
-
+            numRows = 1;
             $("#output tr:not(#headerRow)").remove();
             createOutput("#output tr:last", decoded["name"], decoded["date"]);
             getJson(decoded["name"], decoded["date"]);
@@ -154,6 +163,13 @@
             }
 
             return { "name": meet, "date": date };
+        }
+        function lotteryRoll() {
+            var roll = Math.floor((Math.random() * (numRows-1)) + 1);
+            var firstName = $("#row" + roll + " td:nth-child(2)").text();
+            var lastName = $("#row" + roll + " td:nth-child(3)").text();
+            $("#WinnerBox").html("<h2>" + firstName + " " + lastName + "!</h2>");
+            return false;
         }
     </script>
 </asp:Content>

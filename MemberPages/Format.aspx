@@ -110,9 +110,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="JavaScriptContent" ContentPlaceHolderID="JavaScripts" runat="server">
-    <script src="../Scripts/colorpicker.js"></script>
-    <script src="../Scripts/eye.js"></script>
-    <script src="../Scripts/utils.js"></script>
+    <script src="../Scripts/format.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             pageLoaded();
